@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/manifoldco/promptui"
 )
 
@@ -11,9 +13,9 @@ func Prompt(label string) error {
 	}
 
 	_, err := prompt.Run()
-
 	if err != nil {
-		return err
+		return fmt.Errorf("an error occured on prompt: %w", err)
 	}
+
 	return nil
 }
